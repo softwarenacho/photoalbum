@@ -1,0 +1,30 @@
+ <h1>User: <a href="/profile/<%=@user.id%>"><%= @user.name %></a></h1>
+
+ <div class="container_gallery">
+  <div class="carousel_controls">
+    <a href="#" class= "button_car" id="previous_frame">&lt;</a>
+    <a href="#" class= "button_car" id="next_frame">&gt;</a>
+  </div>
+
+  <%if @photos_array == nil%>
+    <h2>No photos yet.</h2>
+  <%else%>
+
+    <div id="carousel">
+      <ul id="frames">
+        <% @photos_array.each do |p| %>
+          <li>
+            <div class="centered">
+              <a href="/show/<%=p.id%>"><img src="<%= p.photo %>" alt="<%= p.title %>"></a>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+  <% end %>
+</div>
+
+<br><br>
+<a class="button" href="/feed">Home</a>
+<a class="button" href="/logout">Log out.</a>

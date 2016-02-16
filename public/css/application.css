@@ -1,0 +1,204 @@
+html {
+  height:100%;
+}
+
+body {
+  background-image: url("background.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-repeat: repeat-y;
+}
+
+.container {
+  margin: 20px auto;
+  width: 600px;
+  padding: 0px 20px 20px 20px;
+  border: 1px solid black;
+  background-color: #D8BEDB;
+}
+
+a{
+  text-decoration: none;
+  color: #EF313B;
+}
+
+h1 a, h1 {
+  color: #5A276C;
+  text-align: center;
+}
+
+h2 a, h2 {
+  text-align: center;
+  color: #5A276C;
+}
+
+h3 a, h3 {
+  margin: 10px;
+  color: #5A276C;
+}
+
+h4 a, h4 {
+  margin: 0 10px;
+  color: #EE495A;
+}
+
+h5 a, h5 {
+  margin: 5px;
+  margin-left: 30px;
+  color: #EE495A;
+}
+
+.answer {
+  font-size: 18px;
+  color: #8B479C;
+  margin-left: 30px;
+}
+
+textarea, input[type] {
+  font-size: 18px;
+  background-color: whitesmoke;
+}
+
+input[type="submit"], .button {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 0px 5px 5px 0px;
+  border-radius: 5px;
+  border: none;
+  font-size: 18px;
+  color: #5A276C;
+  text-decoration: none;  
+  background-color: #EF313B;
+}
+
+.vote {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 0px 5px 5px 0px;
+  border-radius: 15px;
+  border: none;
+  font-size: 15px;
+  font-weight: normal;
+  color: #5A276C;
+  text-decoration: none;  
+  background-color: #EF313B;
+}
+
+label {
+  font-size: 20px;
+  color: #5A276C;
+  margin-right: 5px;
+}
+
+.score {
+  display: inline-block;
+  color: #5A276C;
+  font-size: 75%;
+  font-weight: bolder;
+  margin-left: 10px;
+}
+
+.align_right {
+  text-align: right;
+  margin-right: 45px;
+}
+
+.centered {
+  text-align: center;
+}
+
+.middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.feed_img, .profile_img, .show_img{
+  max-width: 550px;
+  max-height: 400px;
+}
+
+#sortable {
+  list-style: none;
+}
+
+.sort_img{
+  max-width: 150px;
+  max-height: 150px;
+}
+
+.container_gallery {
+  width: 550px;
+  height: 400px;
+  margin: 0 auto;
+  
+}
+
+#carousel{
+  overflow:hidden;
+  height: 400px;
+
+}
+
+#frames{
+  list-style:none;
+  position: relative;
+  overflow:hidden;
+  padding:0;
+  margin:0;
+  left: -550px;
+}
+#frames > li{
+  position: relative;
+  display: inline;
+  float:left;
+  height: 400px;
+  width: 550px;
+  /*width: 33.33333%;*/
+}
+
+#carousel img{
+  display:inline;
+  max-height: 400px;
+  max-width: 550px;
+}
+
+.carousel_controls a {
+  font-family: monospace;
+  text-decoration: none;
+  position: absolute;
+  margin-top: 199px;
+  width: 30px;
+  background-color: #eee;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+}
+a#previous_frame {
+  margin-left: -30px;
+}
+a#next_frame {
+  margin-left: 550px;
+}
+
+form#new_comment {
+  width: 98%;
+  background-color: #8B479C;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+form#new_comment textarea {
+  width: 99%;
+  margin-bottom: 5px;
+}
+
+
+
+
+

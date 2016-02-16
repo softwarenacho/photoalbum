@@ -1,0 +1,65 @@
+  <h1><%= @photo.title %>
+  <p class="score">
+    Score: <%= photo_score(@photo.id) %>
+  </p>
+  </h1>
+
+  <div class="centered"><a href="/show/<%=@photo.id%>"><img src="<%= @photo.photo %>" alt="<%= @photo.title %>" class="show_img"></a>
+    <br><br>
+    <a class="vote" href="/photo_vote/<%= session[:id] %>&<%= @photo.id %>&1">
+      Up
+    </a>
+    <a class="vote" href="/photo_vote/<%= session[:id]  %>&<%= @photo.id %>&-1">
+      Down
+    </a>
+  </div>
+
+  <!-- This is a hidden ID to pull with Jquery -->
+  <input type="hidden" id="photo_id" value="<%= @photo.id %>">
+  <input type="hidden" id="user_id" value="<%= @user.id %>">
+  <input type="hidden" id="user_name" value="<%= @user.name %>">
+
+  <% author = User.find(@photo.user_id) %>
+  <h4>Author: <a href="/profile/<%= author.id %>"><%= author.name %></a></h4>
+  <h4>Posted: <%= @photo.created_at %></h4>
+  
+
+  <br>
+  <h3>Comments:</h3>
+  <div id="comment_list" class="answer">
+    <%if @answers_array != nil%>
+      <% @answers_array.each do |a| %>
+        <h3 class="inline answer"><%= a.answer %>
+          <p class="score">
+            Score: <%= answer_score(a.id) %>
+          </p>
+        </h3>
+        <% author = User.find(a.user_id) %>
+        <h5>Author: <a href="/profile/<%= author.id %>"><%= author.name %></a></h5>
+        <h5 class="inline">Posted: <%= a.created_at %></h5>  
+        <br><br>
+        <a class="vote" href="/answer_vote/<%= session[:id] %>&<%= a.id %>&1">
+          Up
+        </a>
+        <a class="vote" href="/answer_vote/<%= session[:id]  %>&<%= a.id %>&-1">
+          Down
+        </a>
+        <% if a.user_id == @user.id %>
+          <a href="/delete/<%= a.id %>" class="vote">Delete</a>
+        <% end %>
+        <br><br><br>
+      <%end%>
+    <%end%>
+  </div>
+
+  <br><br>
+
+  <a class="button" id="new_comment_button" href="">New comment</a>
+  <div id="comment_div"></div>
+
+  <br><br>
+  <a class="button" href="/feed">Home</a>
+  <% if @photo.user_id == @user.id %>
+    <a class="button" href="/delete_photo/<%= @photo.id %>">Delete</a>
+  <% end %>
+  <a class="button" href="/logout">Log out.</a>

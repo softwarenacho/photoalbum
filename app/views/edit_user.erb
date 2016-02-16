@@ -1,0 +1,23 @@
+<br>
+<form id="update_user" action="/update_user" method="post">
+  <label for = "name">Name:</label>
+  <input type = "text" name = "name" id = "name"  placeholder = "Introduce your name" value="<%= @user.name %>"  class = "input" required>
+  <br><br>
+  <label for = "email">Email:</label>
+  <input type = "email" name = "email" id = "email" placeholder = "Introduce your Email" value="<%= @user.email %>"  class = "input" required>
+  <br><br>
+  <label for = "pwd1">Password:</label>
+  <input type = "password" name = "pwd1" id = "pwd1" placeholder = "**********"  class = "input">
+  <br><br>
+  <label for = "pwd2">Confirm your password:</label>
+  <input type = "password" name = "pwd2" id = "pwd2" placeholder = "**********"  class = "input">
+  <br><br>
+  <input type="submit" value="Update!">
+</form>
+
+<br>
+<div id="result"></div>
+
+<br>
+<a href="/feed" class="button">Home</a>
+<a href="/delete_user" class="button">Delete</a>

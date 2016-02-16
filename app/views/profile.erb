@@ -1,0 +1,33 @@
+<h1>User: <%= @user.name %></h1>
+
+<% if @user.id == session[:id] %>
+  <br>
+  <a class="button" href="/edit">Edit user</a>
+<% end %>
+<a class="button" href="/create_photo">Post Photo</a>
+<a class="button" href="/gallery/<%= @user.id %>">Gallery</a>
+<a class="button" href="/sort/<%= @user.id %>">Sort photos</a>
+<br>
+<br>
+
+<div>
+  <h2 style="text-align: left;">User's photos</h2>
+  <%if @photos_array == nil%>
+    <h2>No Photos yet.</h2>
+  <%else%>
+    <% @photos_array.each do |p| %>
+      <h3><a href="/show/<%=p.id%>"><%= p.title %></a>
+        <p class="score">
+          Score: <%= photo_score(p.id) %>
+        </p>
+      </h3>
+      <a href="/show/<%= p.id %>"><img src="<%= p.photo %>" alt="<%= p.title %>" class="profile_img"></a>
+    <%end%>
+
+  <%end%>
+</div>
+
+
+<br><br>
+<a class="button" href="/feed">Home</a>
+<a class="button" href="/logout">Log out.</a>

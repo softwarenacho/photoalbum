@@ -1,0 +1,33 @@
+<h1>User: <%= @user.name %></h1>
+<br>
+<h3>Drag and drop to order your photos</h3>
+
+<a class="button" href="/create_photo">Post Photo</a>
+<a class="button" href="/gallery/<%= @user.id %>">Gallery</a>
+<br>
+<br>
+
+<div>
+  <h2 style="text-align: left;">User's photos</h2>
+  <%if @photos_array == nil%>
+    <h2>No Photos yet.</h2>
+  <%else%>
+  <ul id="sortable">
+    <% @photos_array.each do |p| %>
+    <li>
+      <div class="sort_element" data-index="<%= p.photo_index %>"><img src="<%= p.photo %>" alt="<%= p.title %>" class="sort_img"></div>
+    </li>
+    <%end%>
+  </ul>
+  <%end%>
+</div>
+
+<br><br>
+<form method="post" action="/save_sort">
+  <input type="hidden" id="order" name="order" value="">
+  <input type="submit" value="Save changes">
+</form>
+
+<!-- <a class="button" id="save_sort" href="/save_sort">Save changes</a> -->
+<a class="button" href="/feed">Home</a>
+<a class="button" href="/logout">Log out.</a>

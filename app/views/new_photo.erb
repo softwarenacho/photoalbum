@@ -1,0 +1,17 @@
+<h2>Post your photo!</h2>
+
+<div class="centered">
+  <form id = "photo_form" enctype="multipart/form-data" action = "/save_photo" method = "post">
+    <label for = "title">Title:</label>
+    <input type = "text" id = "title" name = "title" placeholder = "Introduce your title" class = "input" required>
+    <br><br>
+    <label for = "photo">Photo:</label>
+    <input type="file" id="photo" name="photo">
+    <br><br>
+    <input type = "submit" value = "Post!">
+  </form>
+</div>
+
+<br>
+
+<div id = "result"></div>
